@@ -119,6 +119,8 @@ nav.wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;
 .chapter h3{margin:0;font-family:'Libre Caslon Text',serif;font-weight:400;font-size:36px}
 .chapter-head .he{font-size:22px;color:var(--rose)}
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chapter-link{margin-top:22px;min-height:46px;padding:0 24px;background:var(--rose);color:#fff;font-size:15px}
+.chapter-link:hover{background:var(--plum)}
 .tags span{padding:7px 14px;border-radius:999px;background:var(--blush);font-size:14px}
 .your-city{margin-top:32px;padding:28px 36px;border-radius:999px;background:var(--rose);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .your-city p{margin:0;font-size:24px}
@@ -154,6 +156,9 @@ nav.wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;
 .date .w{font-size:12px;color:var(--muted)}
 .ev .city{margin:0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--rose);font-weight:600}
 .ev .title{margin:4px 0 0;font-family:'Libre Caslon Text',serif;font-size:25px;line-height:1.25}
+.ev .meta{margin:4px 0 0;font-size:14px;color:var(--muted)}
+.tix{min-height:44px;padding:0 22px;background:var(--rose);color:#fff;font-size:14px;white-space:nowrap;justify-self:start}
+.tix:hover{background:var(--plum)}
 .soon{min-height:44px;padding:0 20px;background:#fff;color:var(--muted);font-size:14px;font-weight:500;white-space:nowrap;justify-self:start}
 .cal-box{border-radius:28px;background:var(--blush);padding:20px}
 .cal-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:4px 4px 20px}
@@ -299,10 +304,11 @@ footer{background:var(--plum);color:#F3DCE5}
 </div>
 <div class="two">
 <article class="chapter">
-<div class="ph"><img src="images/telaviv.jpg" alt="The Tel Aviv skyline across the sea" loading="lazy"></div>
+<a href="https://www.hertelaviv.com" target="_blank" rel="noopener" class="ph" aria-label="Visit the HER Tel Aviv website"><img src="images/telaviv.jpg" alt="The Tel Aviv skyline across the sea" loading="lazy"></a>
 <div class="chapter-in">
 <div class="chapter-head"><h3>HER Tel Aviv</h3><span class="he" lang="he">תל אביב</span></div>
-<div class="tags"><span>Monthly women’s events</span><span>Acclimating in Israel</span><span>Networking nights</span><span>Career panels</span><span>Olim community</span></div>
+<div class="tags"><span>Mega networking nights</span><span>Panels with leading olot</span><span>HER Plus One singles nights</span><span>HER Marketplace</span><span>WIZO You First program</span></div>
+<a href="https://www.hertelaviv.com" target="_blank" rel="noopener" class="pill chapter-link">Visit HER Tel Aviv</a>
 </div>
 </article>
 <article class="chapter">
@@ -423,9 +429,13 @@ footer{background:var(--plum);color:#F3DCE5}
 <script>
 /* ===== EVENTS: edit this list to update both the list and the calendar ===== */
 const EVENTS = [
-  { date: '2026-11-18', city: 'Tel Aviv',  title: 'Women in Tech, career panel & networking' },
+  { date: '2026-11-25', city: 'Tel Aviv',  title: 'HER Tel Aviv Women’s Mega Networking Night',
+    meta: '7:00 PM · NBN TLV, Azrieli Round Building · From ₪50',
+    url: 'https://www.hertelaviv.com/her-events/her-tel-aviv-networking-event' },
   { date: '2026-12-02', city: 'Jerusalem', title: 'Olot welcome evening' },
-  { date: '2026-12-18', city: 'Tel Aviv',  title: 'Lone soldier Shabbat dinner' },
+  { date: '2026-12-09', city: 'Tel Aviv',  title: 'HER Plus One: Fire & Ice Hanukkah Singles Night',
+    meta: '8:00 PM · Ibn Gvirol, Tel Aviv · Ages 25 to 39 · From ₪75',
+    url: 'https://www.hertelaviv.com/her-events/her-plus-one-fire-ice-hanukkah-singles' },
   { date: '2026-12-30', city: 'Jerusalem', title: 'Women’s sharing circle' }
 ];
 /* =========================================================================== */
@@ -438,8 +448,8 @@ const EVENTS = [
     const d = toDate(e.date);
     return `<div class="ev">
       <div class="date"><span class="m">${d.toLocaleDateString('en-GB',{month:'short'})}</span><span class="d">${d.getDate()}</span><span class="w">${d.toLocaleDateString('en-GB',{weekday:'long'})}</span></div>
-      <div><p class="city">${esc(e.city)}</p><p class="title">${esc(e.title)}</p></div>
-      <span class="pill soon">Registration opening soon</span>
+      <div><p class="city">${esc(e.city)}</p><p class="title">${esc(e.title)}</p>${e.meta ? `<p class="meta">${esc(e.meta)}</p>` : ''}</div>
+      ${e.url ? `<a class="pill tix" href="${esc(e.url)}" target="_blank" rel="noopener">Get tickets</a>` : '<span class="pill soon">Registration opening soon</span>'}
     </div>`;
   }).join('');
 
@@ -457,7 +467,7 @@ const EVENTS = [
       if (n < 1 || n > days) { html += '<div class="day out"></div>'; continue; }
       const iso = `${y}-${pad(m + 1)}-${pad(n)}`;
       html += `<div class="day"><span class="num">${n}</span>` +
-        evs.filter(e => e.date === iso).map(e => `<a class="chip" href="#events"><b>${esc(e.city)}</b><span>${esc(e.title)}</span></a>`).join('') + '</div>';
+        evs.filter(e => e.date === iso).map(e => `<a class="chip" href="${e.url ? esc(e.url) : '#events'}"${e.url ? ' target="_blank" rel="noopener"' : ''}><b>${esc(e.city)}</b><span>${esc(e.title)}</span></a>`).join('') + '</div>';
     }
     document.getElementById('cal').innerHTML = html;
     document.getElementById('cal-label').textContent = cur.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
