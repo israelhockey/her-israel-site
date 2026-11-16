@@ -218,7 +218,38 @@ footer{background:var(--plum);color:#F3DCE5}
 .legal{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:24px;padding-bottom:40px;font-size:13px}
 .legal a:hover{color:#fff}
 
+
+/* mobile menu */
+.menu-btn{display:none;width:44px;height:44px;border:0;border-radius:50%;background:#fff;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.menu-btn span{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px}
+.mnav{display:flex;flex-direction:column;padding:8px 20px 18px;background:var(--blush);border-bottom:1px solid var(--petal)}
+.mnav a{padding:12px 0;font-size:17px;font-weight:500;border-top:1px solid var(--petal)}
+.mnav a:first-child{border-top:0}
+/* calendar month list */
+.cal-month{display:none}
+.cm{display:flex;flex-direction:column;gap:2px;padding:14px 16px;border-radius:16px;background:#fff}
+.cm b{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--rose)}
+.cm span{font-family:'Libre Caslon Text',serif;font-size:18px;line-height:1.3}
+.cm-empty{margin:0;color:var(--muted)}
+@media (min-width:901px){.mnav{display:none !important}}
+@media (max-width:640px){
+  .cal-scroll{overflow:visible}
+  .cal{min-width:0;gap:4px}
+  .cal .wd{padding:4px 0;text-align:center;font-size:10px;letter-spacing:.06em}
+  .cal .day{min-height:46px;padding:6px 4px;align-items:center;border-radius:10px;gap:4px}
+  .cal .num{font-size:15px}
+  .chip{width:8px;height:8px;padding:0;border-radius:50%}
+  .chip b,.chip span{display:none}
+  .cal-box{padding:14px}
+  .cal-bar p{font-size:22px}
+  .cal-month{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+}
 @media (max-width:900px){
+  .menu-btn{display:inline-flex}
+  .nav-cta{padding:0 18px}
+  .chapter h3{font-size:30px}
+  .chapter-head{flex-wrap:wrap;gap:4px 12px}
+  .chapter-head .he{white-space:nowrap}
   .wrap{padding-left:20px;padding-right:20px}
   .navlinks,.lang,.deco{display:none}
   .hero-grid,.about .wrap,.two,.soldier-grid,.cta-grid,.foot-grid{grid-template-columns:minmax(0,1fr)}
@@ -244,8 +275,10 @@ footer{background:var(--plum);color:#F3DCE5}
 <div class="nav-right">
 <span class="lang"><a href="#" style="font-weight:600">EN</a><span aria-hidden="true">/</span><a href="#" lang="he" class="he" style="font-size:15px">עב</a></span>
 <a href="#join" class="pill btn-rose nav-cta">Join HER</a>
+<button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><span></span><span></span><span></span></button>
 </div>
 </nav>
+<div class="mnav" id="mnav" hidden><a href="#about">About</a><a href="#programs">Programs</a><a href="#chapters">Chapters</a><a href="#events">Events</a><a href="#involved">Get involved</a></div>
 </header>
 
 <main>
@@ -361,6 +394,7 @@ footer{background:var(--plum);color:#F3DCE5}
 <button type="button" class="cal-nav" id="cal-next" aria-label="Next month"><svg width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5"/></svg></button>
 </div>
 <div class="cal-scroll"><div class="cal" id="cal"></div></div>
+<div class="cal-month" id="cal-month"></div>
 </div>
 </div>
 </section>
@@ -471,6 +505,11 @@ const EVENTS = [
     }
     document.getElementById('cal').innerHTML = html;
     document.getElementById('cal-label').textContent = cur.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+    const inMonth = evs.filter(e => e.date.startsWith(`${y}-${pad(m + 1)}`));
+    document.getElementById('cal-month').innerHTML = inMonth.length ? inMonth.map(e => {
+      const d = toDate(e.date);
+      return `<a class="cm" href="${e.url ? esc(e.url) : '#events'}"${e.url ? ' target="_blank" rel="noopener"' : ''}><b>${d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'})} · ${esc(e.city)}</b><span>${esc(e.title)}</span></a>`;
+    }).join('') : '<p class="cm-empty">No events this month yet.</p>';
   }
   drawCal();
   document.getElementById('cal-prev').onclick = () => { cur = new Date(cur.getFullYear(), cur.getMonth() - 1, 1); drawCal(); };
@@ -482,6 +521,9 @@ const EVENTS = [
   bL.onclick = () => show(false); bC.onclick = () => show(true);
 
   if (location.search.indexOf('joined=1') > -1) document.getElementById('join-sub').textContent = 'Thank you, you’re on the list. We’ll be in touch soon.';
+  const mb = document.getElementById('menu-btn'), mn = document.getElementById('mnav');
+  mb.onclick = () => { const open = mn.hidden; mn.hidden = !open; mb.setAttribute('aria-expanded', String(open)); mb.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); };
+  mn.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mn.hidden = true; mb.setAttribute('aria-expanded','false'); mb.setAttribute('aria-label','Open menu'); }));
   document.getElementById('yr').textContent = new Date().getFullYear();
 })();
 </script>
