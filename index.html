@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HER Israel, women for women across Israel</title>
+<meta name="description" content="HER Israel brings women together, new olot, female lone soldiers, students, professionals, and immigrant mothers, through community programs, networking, career panels, mentorship, and real, practical support.">
+<meta property="og:title" content="HER Israel">
+<meta property="og:description" content="Every woman in Israel should feel safe and protected. We are here for HER.">
+<meta name="theme-color" content="#B0285D">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23B0285D'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='26' fill='white' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Public+Sans:wght@400;500;600&family=Frank+Ruhl+Libre:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blush:#FCE8EF; --petal:#F8D3E0; --rose:#B0285D; --plum:#4A1530; --pink-on-plum:#F7B5CB;
+  --ink:#2A1420; --muted:#5E4A55; --white:#FFFFFF;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--blush);color:var(--ink);font-family:'Public Sans',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;padding-left:48px;padding-right:48px}
+.display{font-family:'Libre Caslon Display',serif;font-weight:400}
+.serif{font-family:'Libre Caslon Text',serif}
+.he{font-family:'Frank Ruhl Libre',serif}
+.rose{color:var(--rose)}
+.eyebrow{margin:0 0 16px;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);font-weight:600}
+.sec-h{margin:0;font-size:60px;line-height:1.05}
+.sec-h em{font-family:'Libre Caslon Text',serif;color:var(--rose)}
+.center{text-align:center}
+.pill{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;font-weight:600;transition:background .2s,color .2s,border-color .2s}
+.btn{min-height:54px;padding:0 32px;font-size:15px}
+.btn-rose{background:var(--rose);color:#fff;border:0}
+.btn-rose:hover{background:var(--plum)}
+.btn-line{border:1.5px solid var(--ink)}
+.btn-line:hover{background:var(--ink);color:#fff}
+.ph{background-color:var(--petal);background-image:repeating-linear-gradient(135deg,rgba(176,40,93,.08) 0 1px,transparent 1px 16px);display:flex;align-items:flex-end;position:relative;overflow:hidden}
+.ph span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);position:relative}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.deco{position:absolute;border-radius:50%;pointer-events:none}
+
+/* nav */
+header{background:var(--blush);position:sticky;top:0;z-index:20}
+nav.wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:20px;padding-bottom:20px}
+.logo{display:flex;align-items:baseline;gap:10px}
+.logo .h{font-family:'Libre Caslon Display',serif;font-size:36px;letter-spacing:.06em;line-height:1;color:var(--rose)}
+.logo .i{font-family:'Libre Caslon Display',serif;font-size:32px;line-height:1}
+.navlinks{display:flex;gap:36px;font-size:15px;font-weight:500}
+.navlinks a{padding:12px 0}
+.navlinks a:hover{color:var(--rose)}
+.nav-right{display:flex;align-items:center;gap:20px}
+.lang{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--muted)}
+.nav-cta{min-height:44px;padding:0 24px;font-size:14px;letter-spacing:.03em}
+
+/* hero */
+.hero{position:relative;overflow:hidden}
+.hero .wrap{position:relative;padding-top:48px;padding-bottom:112px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:64px;align-items:center}
+.badge{display:inline-flex;margin:0 0 32px;padding:8px 16px;border-radius:999px;background:#fff;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);font-weight:600}
+.hero h1{margin:0;font-size:76px;line-height:1.05;letter-spacing:-.01em}
+.hero-sub{margin:24px 0 0;font-size:42px;line-height:1.15}
+.hero-sub em{color:var(--rose)}
+.hero-p{margin:32px 0 0;max-width:560px;font-size:18px;color:var(--muted)}
+.ctas{display:flex;gap:14px;margin-top:40px;flex-wrap:wrap}
+.arch{aspect-ratio:4/5;width:100%;border-radius:999px 999px 24px 24px;justify-content:center;padding:28px;border:10px solid #fff}
+
+/* about */
+.about{background:#fff;border-radius:48px 48px 0 0}
+.about .wrap{max-width:1100px;padding-top:112px;padding-bottom:112px;display:grid;grid-template-columns:minmax(0,3fr) minmax(0,8fr);gap:56px;align-items:center}
+.she{display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;max-width:220px;width:100%;border-radius:50%;background:var(--rose);color:#fff}
+.she .he{font-size:72px;line-height:1}
+.she small{margin-top:8px;font-family:'Libre Caslon Text',serif;font-style:italic;font-size:15px}
+.about-lead{margin:0;font-size:30px;line-height:1.4}
+.about-lead em{color:var(--rose)}
+
+/* programs */
+.programs{background:#fff}
+.programs .wrap{padding-top:24px;padding-bottom:120px}
+.sec-top{margin-bottom:56px}
+.sec-top .sub{margin:16px auto 0;max-width:460px;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.card{display:flex;flex-direction:column;border-radius:28px;overflow:hidden;padding:12px;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(176,40,93,.14)}
+.card:nth-child(odd){background:var(--blush)}
+.card:nth-child(even){background:var(--petal)}
+.card .ph{aspect-ratio:16/11;border-radius:20px;padding:14px;background-color:#fff}
+.card .ph span{font-size:11px}
+.card-body{display:flex;flex-direction:column;gap:10px;padding:22px 16px 18px}
+.card-body .n{font-family:'Libre Caslon Text',serif;font-size:15px;color:var(--rose)}
+.card h3{margin:0;font-family:'Libre Caslon Text',serif;font-weight:400;font-size:26px;line-height:1.2}
+.card p{margin:0;color:var(--muted);font-size:15px}
+
+/* chapters */
+.chapters .wrap{padding-top:120px;padding-bottom:120px}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px}
+.chapter{background:#fff;border-radius:32px;padding:14px 14px 32px}
+.chapter .ph{aspect-ratio:3/2;border-radius:24px;padding:18px}
+.chapter-in{padding:0 18px}
+.chapter-head{display:flex;justify-content:space-between;align-items:baseline;margin-top:24px;gap:12px}
+.chapter h3{margin:0;font-family:'Libre Caslon Text',serif;font-weight:400;font-size:36px}
+.chapter-head .he{font-size:22px;color:var(--rose)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.tags span{padding:7px 14px;border-radius:999px;background:var(--blush);font-size:14px}
+.your-city{margin-top:32px;padding:28px 36px;border-radius:999px;background:var(--rose);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.your-city p{margin:0;font-size:24px}
+.your-city a{min-height:48px;padding:0 26px;background:#fff;color:var(--rose);font-size:15px}
+.your-city a:hover{background:var(--plum);color:#fff}
+
+/* soldiers */
+.soldiers{background:var(--plum);color:#fff;position:relative;overflow:hidden}
+.soldier-grid{position:relative;padding-top:120px;padding-bottom:120px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:center}
+.soldiers .eyebrow{color:var(--pink-on-plum)}
+.soldiers h2{font-size:64px;line-height:1.04}
+.soldiers h2 em{color:var(--pink-on-plum)}
+.soldiers .lede{margin:28px 0 0;color:#F3DCE5;max-width:420px}
+.btn-pink{margin-top:36px;background:var(--pink-on-plum);color:var(--plum)}
+.btn-pink:hover{background:#fff}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.tile{padding:28px;border-radius:24px;background:rgba(247,181,203,.12);border:1px solid rgba(247,181,203,.25)}
+.tile span{font-family:'Libre Caslon Text',serif;font-size:15px;color:var(--pink-on-plum)}
+.tile h3{margin:10px 0 0;font-family:'Libre Caslon Text',serif;font-weight:400;font-size:23px;line-height:1.25}
+
+/* events */
+.events{background:#fff}
+.events .wrap{padding-top:120px;padding-bottom:120px}
+.ev-head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-bottom:40px}
+.toggle{display:inline-flex;padding:4px;border-radius:999px;background:var(--blush)}
+.toggle button{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 20px;border:0;border-radius:999px;background:transparent;color:var(--ink);font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.toggle button[aria-pressed="true"]{background:var(--rose);color:#fff}
+.ev-list{display:flex;flex-direction:column;gap:14px}
+.ev{display:grid;grid-template-columns:96px minmax(0,1fr) auto;gap:28px;align-items:center;padding:16px 28px 16px 16px;border-radius:24px;background:var(--blush)}
+.date{display:flex;flex-direction:column;align-items:center;justify-content:center;width:96px;height:96px;border-radius:20px;background:#fff}
+.date .m{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--rose);font-weight:600}
+.date .d{font-family:'Libre Caslon Display',serif;font-size:40px;line-height:1}
+.date .w{font-size:12px;color:var(--muted)}
+.ev .city{margin:0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--rose);font-weight:600}
+.ev .title{margin:4px 0 0;font-family:'Libre Caslon Text',serif;font-size:25px;line-height:1.25}
+.soon{min-height:44px;padding:0 20px;background:#fff;color:var(--muted);font-size:14px;font-weight:500;white-space:nowrap;justify-self:start}
+.cal-box{border-radius:28px;background:var(--blush);padding:20px}
+.cal-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:4px 4px 20px}
+.cal-bar p{margin:0;font-family:'Libre Caslon Text',serif;font-size:28px}
+.cal-nav{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:50%;background:#fff;color:var(--ink);cursor:pointer}
+.cal-nav:hover{background:var(--petal)}
+.cal-scroll{overflow-x:auto}
+.cal{min-width:760px;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.cal .wd{padding:6px 10px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.cal .day{min-height:120px;padding:10px;display:flex;flex-direction:column;gap:6px;border-radius:14px;background:#fff}
+.cal .day.out{background:transparent}
+.cal .num{font-family:'Libre Caslon Text',serif;font-size:17px}
+.chip{display:flex;flex-direction:column;gap:2px;padding:8px 10px;border-radius:10px;background:var(--rose);color:#fff}
+.chip b{font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+.chip span{font-size:13px;line-height:1.35}
+[hidden]{display:none !important}
+
+/* involved */
+.involved .wrap{padding-top:120px;padding-bottom:120px}
+.ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.way{display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding:32px 28px;border-radius:28px;min-height:230px;transition:transform .25s}
+.way:hover{transform:translateY(-4px)}
+.way h3{margin:0;font-family:'Libre Caslon Text',serif;font-weight:400;font-size:32px;line-height:1.1}
+.way p{margin:0;font-size:15px;flex-grow:1;opacity:.9}
+.way .go{min-height:40px;padding:0 18px;font-size:14px}
+.w1{background:#fff}.w1 .go{background:var(--rose);color:#fff}
+.w2{background:var(--rose);color:#fff}.w2 .go{background:#fff;color:var(--rose)}
+.w3{background:var(--petal)}.w3 .go{background:var(--rose);color:#fff}
+.w4{background:var(--plum);color:#fff}.w4 .go{background:var(--pink-on-plum);color:var(--plum)}
+
+/* join */
+.join{background:var(--rose);color:#fff;position:relative;overflow:hidden}
+.cta-grid{position:relative;padding-top:120px;padding-bottom:120px;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:center}
+figure{margin:0}
+blockquote{margin:24px 0 0;font-family:'Libre Caslon Text',serif;font-size:38px;line-height:1.3}
+figcaption{margin-top:28px;font-size:14px;letter-spacing:.08em}
+form{background:#fff;color:var(--ink);padding:40px;border-radius:32px}
+form h2{margin:0;font-family:'Libre Caslon Text',serif;font-weight:400;font-size:32px;line-height:1.15}
+form .sub{margin:10px 0 24px;font-size:15px;color:var(--muted)}
+.fields{display:flex;flex-direction:column;gap:14px}
+label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;letter-spacing:.04em}
+input{min-height:50px;padding:0 18px;border:0;border-radius:14px;background:var(--blush);font:inherit;font-weight:400;font-size:16px;color:var(--ink)}
+input::placeholder{color:#8A7581}
+form button{min-height:54px;margin-top:8px;cursor:pointer;font:inherit;font-weight:600;font-size:15px}
+.hp{position:absolute;left:-9999px}
+
+/* footer */
+footer{background:var(--plum);color:#F3DCE5}
+.foot-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,2fr) minmax(0,2fr) minmax(0,3fr);gap:48px;padding-top:80px;padding-bottom:56px;border-bottom:1px solid rgba(247,181,203,.3)}
+.foot-logo{margin:0;display:flex;align-items:baseline;gap:10px}
+.foot-logo .h{font-family:'Libre Caslon Display',serif;font-size:44px;letter-spacing:.06em;line-height:1;color:var(--pink-on-plum)}
+.foot-logo .i{font-family:'Libre Caslon Display',serif;font-size:40px;line-height:1;color:#fff}
+.foot-h{margin:0 0 8px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--pink-on-plum)}
+.foot-col{display:flex;flex-direction:column;gap:4px;font-size:15px}
+.foot-col a{min-height:32px;color:#fff}
+.foot-col a:hover{color:var(--pink-on-plum)}
+.legal{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:24px;padding-bottom:40px;font-size:13px}
+.legal a:hover{color:#fff}
+
+@media (max-width:900px){
+  .wrap{padding-left:20px;padding-right:20px}
+  .navlinks,.lang,.deco{display:none}
+  .hero-grid,.about .wrap,.two,.soldier-grid,.cta-grid,.foot-grid{grid-template-columns:minmax(0,1fr)}
+  .hero h1{font-size:46px}
+  .hero-sub{font-size:30px}
+  .sec-h,.soldiers h2{font-size:38px}
+  .about-lead{font-size:24px}
+  .she{max-width:180px}
+  .tiles{grid-template-columns:minmax(0,1fr)}
+  .ev{grid-template-columns:minmax(0,1fr);gap:12px;padding:16px}
+  .your-city{border-radius:28px}
+  blockquote{font-size:28px}
+  form{padding:28px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<nav class="wrap" aria-label="Main">
+<a href="#" class="logo" aria-label="HER Israel home"><span class="h">HER</span><span class="i">Israel</span></a>
+<div class="navlinks"><a href="#about">About</a><a href="#programs">Programs</a><a href="#chapters">Chapters</a><a href="#events">Events</a><a href="#involved">Get involved</a></div>
+<div class="nav-right">
+<span class="lang"><a href="#" style="font-weight:600">EN</a><span aria-hidden="true">/</span><a href="#" lang="he" class="he" style="font-size:15px">עב</a></span>
+<a href="#join" class="pill btn-rose nav-cta">Join HER</a>
+</div>
+</nav>
+</header>
+
+<main>
+<section class="hero">
+<div class="deco" aria-hidden="true" style="width:560px;height:560px;background:var(--petal);right:-120px;top:40px"></div>
+<div class="wrap">
+<div class="hero-grid">
+<div>
+<p class="badge">Women for women · Est. 2020</p>
+<h1 class="display">Every woman in Israel should feel safe and protected.</h1>
+<p class="serif hero-sub">We are here <em>for HER.</em></p>
+<p class="hero-p">HER Israel brings women together, new olot, female lone soldiers, students, professionals, and immigrant mothers, through community programs, networking, career panels, mentorship, and real, practical support.</p>
+<div class="ctas">
+<a href="#join" class="pill btn btn-rose">Join the community</a>
+<a href="#events" class="pill btn btn-line">HER Events</a>
+</div>
+</div>
+<div class="ph arch"><img src="images/hero.jpg" alt="Four women talking and laughing together, drinks in hand"></div>
+</div>
+</div>
+</section>
+
+<section id="about" class="about">
+<div class="wrap">
+<div class="she"><span class="he" lang="he">היא</span><small>Hebrew for “her.”</small></div>
+<div>
+<p class="eyebrow">01 About</p>
+<p class="serif about-lead">Making aliyah and moving to a new country, serving in the IDF far from family, or starting a career without speaking the language, it’s easier with women beside you. <em>HER Israel connects you to a real community and to the support you need.</em></p>
+</div>
+</div>
+</section>
+
+<section id="programs" class="programs">
+<div class="wrap">
+<div class="center sec-top">
+<p class="eyebrow">02 Programs</p>
+<h2 class="display sec-h">What we do</h2>
+<p class="sub">HER ongoing programs, run by volunteers and partners in each city.</p>
+</div>
+<div class="cards">
+<a href="#join" class="card"><div class="ph"><img src="images/aliyah.jpg" alt="A young woman at the airport with her suitcases" loading="lazy"></div><div class="card-body"><span class="n">01</span><h3>Aliyah &amp; klita guidance</h3><p>Your first year in Israel, made easier.</p></div></a>
+<a href="#join" class="card"><div class="ph"><img src="images/mentor.jpg" alt="Two women talking over coffee in a cafe" loading="lazy"></div><div class="card-body"><span class="n">02</span><h3>Mentorship &amp; leadership</h3><p>One-to-one support as you grow.</p></div></a>
+<a href="#join" class="card"><div class="ph"><img src="images/soldier.jpg" alt="Israeli flags hanging from a building in Tel Aviv" loading="lazy"></div><div class="card-body"><span class="n">03</span><h3>Female lone soldier support</h3><p>Family for women serving far from home.</p></div></a>
+<a href="#join" class="card"><div class="ph"><img src="images/network.jpg" alt="A group of women around a table with drinks" loading="lazy"></div><div class="card-body"><span class="n">04</span><h3>Networking for women &amp; olot</h3><p>Evenings that turn contacts into friends.</p></div></a>
+<a href="#join" class="card"><div class="ph"><img src="images/panels.jpg" alt="A woman speaking at a presentation" loading="lazy"></div><div class="card-body"><span class="n">05</span><h3>Women’s job panels</h3><p>Real stories from women leaders.</p></div></a>
+<a href="#join" class="card"><div class="ph"><img src="images/community.jpg" alt="A group of women sitting around a table together" loading="lazy"></div><div class="card-body"><span class="n">06</span><h3>Community &amp; wellbeing</h3><p>Shabbat tables, workshops and a circle to lean on.</p></div></a>
+</div>
+</div>
+</section>
+
+<section id="chapters" class="chapters">
+<div class="wrap">
+<div class="center sec-top">
+<p class="eyebrow">03 HER Chapters</p>
+<h2 class="display sec-h">HER Israel is <em>growing.</em></h2>
+</div>
+<div class="two">
+<article class="chapter">
+<div class="ph"><img src="images/telaviv.jpg" alt="The Tel Aviv skyline across the sea" loading="lazy"></div>
+<div class="chapter-in">
+<div class="chapter-head"><h3>HER Tel Aviv</h3><span class="he" lang="he">תל אביב</span></div>
+<div class="tags"><span>Monthly women’s events</span><span>Acclimating in Israel</span><span>Networking nights</span><span>Career panels</span><span>Olim community</span></div>
+</div>
+</article>
+<article class="chapter">
+<div class="ph"><img src="images/jerusalem.jpg" alt="A stone stairway street in Jerusalem" loading="lazy"></div>
+<div class="chapter-in">
+<div class="chapter-head"><h3>HER Jerusalem</h3><span class="he" lang="he">ירושלים</span></div>
+<div class="tags"><span>Shabbat tables</span><span>Mentorship programs</span><span>Students &amp; lone soldiers</span><span>Networking events</span><span>Career panels</span></div>
+</div>
+</article>
+</div>
+<div class="your-city">
+<p class="serif">Haifa, Be’er Sheva, Ra’anana, <em>bring HER to your city.</em></p>
+<a href="#join" class="pill">Start a chapter</a>
+</div>
+</div>
+</section>
+
+<section class="soldiers">
+<div class="deco" aria-hidden="true" style="width:420px;height:420px;border:1px solid rgba(247,181,203,.35);left:-140px;bottom:-160px"></div>
+<div class="wrap soldier-grid">
+<div>
+<p class="eyebrow">04 Lone soldier support</p>
+<h2 class="display sec-h">No woman<br>serves <em class="serif">alone.</em></h2>
+<p class="lede">HER stands with female lone soldiers, before, during and after service.</p>
+<a href="#join" class="pill btn btn-pink">Request support</a>
+</div>
+<div class="tiles">
+<div class="tile"><span>i.</span><h3>A home for Shabbat and chagim</h3></div>
+<div class="tile"><span>ii.</span><h3>A mentor in her corner</h3></div>
+<div class="tile"><span>iii.</span><h3>Practical, everyday help</h3></div>
+<div class="tile"><span>iv.</span><h3>Life after service</h3></div>
+</div>
+</div>
+</section>
+
+<section id="events" class="events">
+<div class="wrap">
+<div class="ev-head">
+<div><p class="eyebrow">05 Upcoming</p><h2 class="display sec-h">HER Events, <em>on the calendar</em></h2></div>
+<div class="toggle" role="group" aria-label="Event view">
+<button type="button" id="btn-list" aria-pressed="true"><svg width="16" height="12" viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 1h16M0 6h16M0 11h16"/></svg>List</button>
+<button type="button" id="btn-cal" aria-pressed="false"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="0.7" y="2" width="12.6" height="11.3"/><path d="M0.7 5.5h12.6M4 0v3.5M10 0v3.5"/></svg>Calendar</button>
+</div>
+</div>
+<div id="view-list" class="ev-list"></div>
+<div id="view-cal" class="cal-box" hidden>
+<div class="cal-bar">
+<button type="button" class="cal-nav" id="cal-prev" aria-label="Previous month"><svg width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M18 6H2M7 1L2 6l5 5"/></svg></button>
+<p id="cal-label" aria-live="polite"></p>
+<button type="button" class="cal-nav" id="cal-next" aria-label="Next month"><svg width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5"/></svg></button>
+</div>
+<div class="cal-scroll"><div class="cal" id="cal"></div></div>
+</div>
+</div>
+</section>
+
+<section id="involved" class="involved">
+<div class="wrap">
+<div class="center sec-top">
+<p class="eyebrow">06 Get involved</p>
+<h2 class="display sec-h">There’s a place for you <em>at the table.</em></h2>
+</div>
+<div class="ways">
+<a href="#join" class="way w1"><h3>Attend</h3><p>Come to an evening, a panel or a Shabbat table.</p><span class="pill go">Get in touch</span></a>
+<a href="#join" class="way w2"><h3>Volunteer</h3><p>Help run a chapter in your city.</p><span class="pill go">Volunteer</span></a>
+<a href="#join" class="way w3"><h3>Mentor</h3><p>Share your experience with another woman.</p><span class="pill go">Become a mentor</span></a>
+<a href="#join" class="way w4"><h3>Partner with us</h3><p>Host a panel or sponsor an event.</p><span class="pill go">Get in touch</span></a>
+</div>
+</div>
+</section>
+
+<section id="join" class="join">
+<div class="deco" aria-hidden="true" style="width:520px;height:520px;background:rgba(255,255,255,.07);left:-160px;top:-180px"></div>
+<div class="wrap cta-grid">
+<figure>
+<svg width="40" height="30" viewBox="0 0 40 30" fill="#F7B5CB" aria-hidden="true"><path d="M0 30V17C0 7 5 1 15 0v6c-5 1-8 5-8 10h8v14H0zm25 0V17c0-10 5-16 15-17v6c-5 1-8 5-8 10h8v14H25z"/></svg>
+<blockquote>[A real quote from a member, one or two sentences about what HER changed for her.]</blockquote>
+<figcaption>[NAME], [member, HER Jerusalem]</figcaption>
+</figure>
+<form name="join" method="POST" data-netlify="true" netlify-honeypot="company" action="/?joined=1#join">
+<input type="hidden" name="form-name" value="join">
+<p class="hp"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+<h2>Join the HER community</h2>
+<p class="sub" id="join-sub">Events, opportunities and news, about twice a month.</p>
+<div class="fields">
+<label>First name <input type="text" name="first_name" placeholder="Your first name" autocomplete="given-name" required></label>
+<label>Email <input type="email" name="email" placeholder="you@email.com" autocomplete="email" required></label>
+<label>City <input type="text" name="city" placeholder="Where do you live?" autocomplete="address-level2"></label>
+<button type="submit" class="pill btn-rose">Sign me up</button>
+</div>
+</form>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="foot-grid">
+<div>
+<p class="foot-logo"><span class="h">HER</span><span class="i">Israel</span></p>
+<p style="margin:20px 0 0;max-width:320px;font-size:15px">A community of women supporting women across Israel.</p>
+</div>
+<div class="foot-col"><p class="foot-h">Explore</p><a href="#about">About</a><a href="#programs">Programs</a><a href="#chapters">Chapters</a><a href="#events">Events</a></div>
+<div class="foot-col"><p class="foot-h">Follow</p><a href="#">Instagram</a><a href="#">WhatsApp community</a><a href="#">LinkedIn</a><a href="#">Facebook</a></div>
+<div style="font-size:15px">
+<p class="foot-h" style="margin-bottom:12px">Contact</p>
+<p style="margin:0;color:#fff">[hello@herisrael.org]</p>
+<p style="margin:4px 0 0;color:#fff">[+972 phone number]</p>
+</div>
+</div>
+<div class="legal">
+<span>© <span id="yr">2026</span> HER Israel. All rights reserved.</span>
+<span style="display:flex;gap:24px"><a href="#">Privacy</a><a href="#">Accessibility</a><a href="#" lang="he" class="he">עברית</a></span>
+</div>
+</div>
+</footer>
+
+<script>
+/* ===== EVENTS: edit this list to update both the list and the calendar ===== */
+const EVENTS = [
+  { date: '2026-11-18', city: 'Tel Aviv',  title: 'Women in Tech, career panel & networking' },
+  { date: '2026-12-02', city: 'Jerusalem', title: 'Olot welcome evening' },
+  { date: '2026-12-18', city: 'Tel Aviv',  title: 'Lone soldier Shabbat dinner' },
+  { date: '2026-12-30', city: 'Jerusalem', title: 'Women’s sharing circle' }
+];
+/* =========================================================================== */
+(function () {
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const toDate = iso => { const p = iso.split('-').map(Number); return new Date(p[0], p[1] - 1, p[2]); };
+  const evs = EVENTS.slice().sort((a, b) => a.date.localeCompare(b.date));
+
+  document.getElementById('view-list').innerHTML = evs.map(e => {
+    const d = toDate(e.date);
+    return `<div class="ev">
+      <div class="date"><span class="m">${d.toLocaleDateString('en-GB',{month:'short'})}</span><span class="d">${d.getDate()}</span><span class="w">${d.toLocaleDateString('en-GB',{weekday:'long'})}</span></div>
+      <div><p class="city">${esc(e.city)}</p><p class="title">${esc(e.title)}</p></div>
+      <span class="pill soon">Registration opening soon</span>
+    </div>`;
+  }).join('');
+
+  const today = new Date(); today.setHours(0,0,0,0);
+  const next = evs.find(e => toDate(e.date) >= today) || evs[0];
+  let cur = next ? toDate(next.date) : today;
+  cur = new Date(cur.getFullYear(), cur.getMonth(), 1);
+  const pad = n => String(n).padStart(2, '0');
+  function drawCal() {
+    const y = cur.getFullYear(), m = cur.getMonth(), lead = cur.getDay(), days = new Date(y, m + 1, 0).getDate();
+    const total = Math.ceil((lead + days) / 7) * 7;
+    let html = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].map(d => `<div class="wd">${d}</div>`).join('');
+    for (let i = 0; i < total; i++) {
+      const n = i - lead + 1;
+      if (n < 1 || n > days) { html += '<div class="day out"></div>'; continue; }
+      const iso = `${y}-${pad(m + 1)}-${pad(n)}`;
+      html += `<div class="day"><span class="num">${n}</span>` +
+        evs.filter(e => e.date === iso).map(e => `<a class="chip" href="#events"><b>${esc(e.city)}</b><span>${esc(e.title)}</span></a>`).join('') + '</div>';
+    }
+    document.getElementById('cal').innerHTML = html;
+    document.getElementById('cal-label').textContent = cur.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+  }
+  drawCal();
+  document.getElementById('cal-prev').onclick = () => { cur = new Date(cur.getFullYear(), cur.getMonth() - 1, 1); drawCal(); };
+  document.getElementById('cal-next').onclick = () => { cur = new Date(cur.getFullYear(), cur.getMonth() + 1, 1); drawCal(); };
+
+  const bL = document.getElementById('btn-list'), bC = document.getElementById('btn-cal');
+  const vL = document.getElementById('view-list'), vC = document.getElementById('view-cal');
+  const show = cal => { vL.hidden = cal; vC.hidden = !cal; bL.setAttribute('aria-pressed', String(!cal)); bC.setAttribute('aria-pressed', String(cal)); };
+  bL.onclick = () => show(false); bC.onclick = () => show(true);
+
+  if (location.search.indexOf('joined=1') > -1) document.getElementById('join-sub').textContent = 'Thank you, you’re on the list. We’ll be in touch soon.';
+  document.getElementById('yr').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
